@@ -1,28 +1,23 @@
 import java.util.List;
 import java.util.Optional;
 
-interface Structure {
-    // zwraca dowolny element o podanym kolorze
-    Optional findBlockByColor(String color);
-
-    // zwraca wszystkie elementy z danego materiału
-    List findBlocksByMaterial(String material);
-
-    //zwraca liczbę wszystkich elementów tworzących strukturę
-    int count();
-}
-
 public class Wall implements Structure {
-    private List blocks;
+    private List<Block> blocks;
 
 
+    @Override
+    public Optional<Block> findBlockByColor(String color) {
+        return Optional.empty();
+    }
+
+    @Override
+    public List<Block> findBlocksByMaterial(String material) {
+        return null;
+    }
+
+    @Override
+    public int count() {
+        return 0;
+    }
 }
 
-interface Block {
-    String getColor();
-    String getMaterial();
-}
-
-interface CompositeBlock extends Block {
-    List getBlocks();
-}
